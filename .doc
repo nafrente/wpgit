@@ -1,0 +1,10 @@
+## Wordpress sites management and initialization tools
+
+#Install wp cli, document: http://wp-cli.org/docs/
+Process:
+$ curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+Check:
+$ php wp-cli.phar --info
+Prepare:
+$ chmod +x wp-cli.phar
+$ sudo mv wp-cli.phar /usr/local/bin/wp

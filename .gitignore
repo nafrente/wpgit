@@ -1,0 +1,19 @@
+#Wordpress optimize repo by H
+# Ignore everything in the root except the "wp-content", documentation and this file.
+/*
+!.gitignore
+!.doc
+!wp-content/
+
+# Ignore everything in the "wp-content" directory, except the "plugins" and "themes" directories.
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
+
+# Ignore everything in the "plugins" directory, except the plugins you specify
+wp-content/plugins/*
+# !wp-content/plugins/whatever
+
+# Ignore everything in the "themes" directory, except the themes you specify
+wp-content/themes/*
+!wp-content/themes/whatever
