@@ -2,23 +2,23 @@
 
 #Install wp cli, document: http://wp-cli.org/docs/
 Process:
-$ curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+  $ curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 Check:
-$ php wp-cli.phar --info
+  $ php wp-cli.phar --info
 Prepare:
-$ chmod +x wp-cli.phar
-$ sudo mv wp-cli.phar /usr/local/bin/wp
+  $ chmod +x wp-cli.phar
+  $ sudo mv wp-cli.phar /usr/local/bin/wp
 Final check:
-$ wp --info
+  $ wp --info
 
 #Db/user Creation
-mysql -u root -p2222 << EOF
-CREATE DATABASE IF NOT EXISTS 'wordpress';
-CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON 'wordpress'.* TO 'wordpress'@'localhost';
-FLUSH PRIVILEGES;
-EOF
+  $ mysql -u [mysql_user] -p[mysql_password] << EOF
+    CREATE DATABASE IF NOT EXISTS wordpress;
+    CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'password';
+    GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'localhost';
+    FLUSH PRIVILEGES;
+    EOF
 
-Downloading and installing wordpress:
-wp core download
-wp core config --dbname=wordpress --dbuser=wordpress --dbpass=password --dbhost=127.0.0.1
+#Downloading and installing wordpress:
+  $ wp core download
+  $ wp core config --dbname=wordpress --dbuser=wordpress --dbpass=password --dbhost=127.0.0.1
